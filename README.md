@@ -32,7 +32,8 @@ RUN pip install torch torchvision --index-url https://download.pytorch.org/whl/c
 ### 2.3 環境変数の設定
 Kaggle API Tokenなどの環境変数を`.env`ファイルへ記入
 ```
-KAGGLE_API_TOKEN = {API Key}
+KAGGLE_API_TOKEN = {APIKEY}
+KAGGLE_USERNAME = {USERNAME}
 ```
 
 ## 3. DevContainerの起動
@@ -52,11 +53,13 @@ WSL側
 
 /kaggle/ <- マウント
   │
-  ├─README.md
-  │
-  ├─.devcontainer/ <- イメージの切り替えはこの中のファイルを編集することで対応
-  │
-  ├─sample/
+  ├─kaggle-docker/
+  │  │
+  │  ├─README.md
+  │  │
+  │  ├─.devcontainer/ <- イメージの切り替えはこの中のファイルを編集することで対応
+  │  │
+  │  ├─sample/
   │  │
   │  ├─dataset
   │  │
@@ -124,3 +127,7 @@ VS Code 拡張機能リストと役割の概要
   "ms-toolsai.vscode-jupyter-slideshow"  // Jupyterスライドショー表示機能
 ]
 ```
+
+# 追記
+- `.env`から環境変数を設定するだけだとkaggle APIがうまく動作しない
+- `~/config/kaggle/kaggle.json`を作成するしかない？
