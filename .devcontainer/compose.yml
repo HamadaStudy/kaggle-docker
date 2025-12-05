@@ -1,0 +1,20 @@
+services:
+  kaggle:
+    build: .
+    privileged: true
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    shm_size: '16gb'
+    volumes:
+      - ../:/kaggle
+    environment:
+      - KAGGLE_API_TOKEN=${KAGGLE_API_TOKEN}
+    working_dir: /kaggle
+    ports:
+      - "8888:8888"
+    tty: true

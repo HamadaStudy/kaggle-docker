@@ -1,0 +1,47 @@
+{
+  "name": "my-kaggle",
+  "workspaceFolder": "/kaggle",
+  "dockerComposeFile": [
+    "./compose.yml"
+  ],
+  "service": "kaggle",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        // VSCodeの好みの設定を追加可能
+        "files.autoSave": "onFocusChange",
+        "files.exclude": {
+          "**/.git": true,          // .git フォルダ
+          "**/.svn": true,          // .svn フォルダ
+          "**/.hg": true,           // .hg フォルダ
+          "**/CVS": true,           // CVS フォルダ
+          "**/.DS_Store": true,     // macOSのDS_Store
+          "**/Thumbs.db": true,     // WindowsのサムネイルDB
+          "**/.vscode": true,       // .vscode フォルダ自体
+          "**/.idea": true,         // JetBrains IDEのプロジェクトファイル
+
+          // **汎用的な設定: . から始まるファイルやフォルダ全体を非表示**
+          "**/.*/": true,           // . で始まるフォルダ全体を非表示
+          ".*": true                // . で始まるファイル全体を非表示
+        }
+
+      },
+      "extensions": [
+        "mechatroner.rainbow-csv",
+        "ms-python.black-formatter",
+        "ms-python.isort",
+        "andrepimenta.claude-code-chat",
+        "anthropic.claude-code",
+        "ms-ceintl.vscode-language-pack-ja",
+        "ms-python.debugpy",
+        "ms-python.python",
+        "ms-python.vscode-python-envs",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.jupyter-keymap",
+        "ms-toolsai.jupyter-renderers",
+        "ms-toolsai.vscode-jupyter-cell-tags",
+        "ms-toolsai.vscode-jupyter-slideshow"
+      ]
+    }
+  }
+}
